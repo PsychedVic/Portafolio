@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load bootstrap4 %}
+<h1>Proyectos</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+
+    {% for formset in inlines %}
+      {{ formset.as_p }}
+    {% endfor %}
+
+    <input type="submit" value="Enviar" />
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load bootstrap4 %}
+<form method="post">{% csrf_token %}
+    <p>Seguro de que quieres eliminar "{{ object }}"?</p>
+    <input type="submit" value="Confirm">
+    <a class="btn btn-primary" href="{% url 'proyectos:lista_proyecto' %}">Regresar</a>
+</form>
+{% endblock %}
